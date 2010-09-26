@@ -12,11 +12,9 @@ setup(name='loud',
       keywords='',
       author='kusut',
       author_email='kusut@dahsy.at',
-      url='kusut.web.id',
+      url='http://bitbucket.org/kusut/loud',
       license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
-      include_package_data=True,
-      zip_safe=False,
       install_requires=["nose>=0.1.0"],
       entry_points = {
           'nose.plugins.0.10': [

@@ -3,7 +3,7 @@ Loud
 ================
 
 This nose plugin lets you play sound when running your test. Current version
-only play audio files on two instances, when you pass the test, or not (no
+only plays audio files on two instances, when you pass the test, or not (no
 option to play sound at individual error/failure).
 
 
@@ -15,8 +15,12 @@ sure you have the libraries needed on your OSes for all audio formats you
 want to play. 
 
 
-Usage
---------------
+Installation and Usage
+----------------------
+
+Download and install with::
+
+   $ python setup.py install
 
 Use option --perfect or --fail::
 
