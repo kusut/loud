@@ -8,7 +8,7 @@ option to play sound at individual error/failure).
 
 
 Requirement/Gotchas
--------------
+-------------------
 
 This plugin uses sox (http://sox.sourceforge.net/) to play audio files. Make 
 sure you have the libraries needed on your OSes for all audio formats you
