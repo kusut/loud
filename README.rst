@@ -14,8 +14,8 @@ Loud will use these media players to play audio files:
 
 Use option --perfect and/or --fail::
 
-   $ nosetests --perfect ~/godlike.mp3
-   $ nosetests --fail ~/.wav
-   $ nosetests --perfect ~/guilestheme.wav --fail ~/yaketysax.wav
+   $ nosetests --perfect ~/godlike.wav
+   $ nosetests --fail ~/combo_breaker.wav
+   $ nosetests --perfect ~/guilestheme.mp3 --fail ~/yaketysax.mp3
 
 

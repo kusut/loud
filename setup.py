@@ -11,7 +11,7 @@ except IOError:
 
 setup(
     name='loud',
-    version='0.1.1',
+    version='0.1.2',
     description="Nose plugin for sound notification",
     long_description=README,
     classifiers=[
