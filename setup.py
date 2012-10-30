@@ -11,7 +11,7 @@ except IOError:
 
 setup(
     name='loud',
-    version='0.1',
+    version='0.1.1',
     description="Nose plugin for sound notification",
     long_description=README,
     classifiers=[
@@ -21,7 +21,7 @@ setup(
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: Implementation :: CPython",
         "Topic :: Software Development :: Testing",
-        "License :: MIT License",
+        "License :: OSI Approved :: MIT License",
     ],
     keywords='nose plugin testing audio',
     author='kusut',
