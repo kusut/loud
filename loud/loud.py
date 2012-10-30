@@ -9,25 +9,28 @@ class Loud(Plugin):
     enabled = True
 
     def options(self, parser, env=os.environ):
-        parser.add_option('--perfect', action='store',
-                          dest='perfect',
-                          metavar='AUDIO_FILE',
-                          help='Play AUDIO_FILE on successful test')
-        parser.add_option('--fail', action='store',
-                          dest='fail',
-                          metavar='AUDIO_FILE',
-                          help='Play AUDIO_FILE on failed test')
+        parser.add_option(
+            '--perfect',
+            action='store',
+            dest='perfect',
+            metavar='AUDIO_FILE',
+            help='Play AUDIO_FILE on successful test'
+        )
+        parser.add_option(
+            '--fail',
+            action='store',
+            dest='fail',
+            metavar='AUDIO_FILE',
+            help='Play AUDIO_FILE on failed test'
+        )
 
     def configure(self, options, conf):
         super(Loud, self).configure(options, conf)
-        if  hasattr(options, 'perfect'):
-            self.perfect = options.perfect
-        if  hasattr(options, 'fail'):
-            self.fail = options.fail
+        self.perfect = getattr(options, 'perfect', None)
+        self.fail = getattr(options, 'fail', None)
 
     def finalize(self, result):
-        param = (getattr(self, 'fail', None),
-                 getattr(self, 'perfect', None))[result.wasSuccessful()]
+        param = (self.fail, self.perfect)[result.wasSuccessful()]
         if param is not None:
             if platform.system() == 'Windows':
                 call(['sox', param, '-q', '-d'])
