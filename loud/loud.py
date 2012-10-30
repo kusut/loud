@@ -32,7 +32,10 @@ class Loud(Plugin):
     def finalize(self, result):
         param = (self.fail, self.perfect)[result.wasSuccessful()]
         if param is not None:
-            if platform.system() == 'Windows':
-                call(['sox', param, '-q', '-d'])
+            machine = platform.system()
+            if machine == 'Windows':
+                call(['wmplayer', param])
+            elif machine == 'Darwin':
+                call(['afplay', param])
             else:
-                call(['play', param, '-q'])
+                call(['mpg123', '-q', param])

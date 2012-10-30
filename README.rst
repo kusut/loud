@@ -6,24 +6,14 @@ This nose plugin lets you play sound when running your test. Current version
 only plays audio files on two instances, when you pass the test, or not (no
 option to play sound at individual error/failure).
 
+Loud will use these media players to play audio files:
 
-Requirement/Gotchas
--------------------
+- Linux/BSD: mpg123
+- Mac OS: afplay
+- Windows: wmplayer
 
-This plugin uses sox (http://sox.sourceforge.net/) to play audio files. Make 
-sure you have the libraries needed on your OSes for all audio formats you
-want to play. 
+Use option --perfect and/or --fail::
 
-
-Installation and Usage
-----------------------
-
-Download and install with::
-
-   $ python setup.py install
-
-Use option --perfect or --fail::
-
-   $ nosetests --perfect ~/godlike.wav
-   $ nosetests --fail ~/combobreaker.wav
-   $ nosetests --perfect ~/godlike.wav --fail ~/combobreaker.wav
+   $ nosetests --perfect ~/godlike.mp3
+   $ nosetests --fail ~/.wav
+   $ nosetests --perfect ~/guilestheme.wav --fail ~/yaketysax.wav
